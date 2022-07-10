@@ -1,5 +1,6 @@
 
 import defaultImg from '@/assets/images/errorimg.png'
+import Message from './Message'
 // context方法 批量注册组件
 const importFn = require.context('./', false, /\.vue$/)
 
@@ -12,6 +13,8 @@ export default {
     })
     // 定义指令
     defindDirective(app)
+    // 定义一个原型函数
+    app.config.globalProperties.$message = Message
   }
 }
 const defindDirective = (app) => {
